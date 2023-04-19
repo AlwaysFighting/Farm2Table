@@ -2,7 +2,7 @@ import 'package:farm2table/Market/Views/market_home.dart';
 import 'package:flutter/material.dart';
 
 import '../Cart/Views/cart.dart';
-import '../Experience/Views/experience_home.dart';
+import '../Experience/Controllers/experience_home.dart';
 import '../Home/Views/home.dart';
 import '../MyPage/Views/mypage_home.dart';
 
@@ -23,7 +23,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
   final List<Widget> _widgetOptions = <Widget>[
     const Home(),
     const MarketHomePage(),
-    const ExperienceHome(),
+    ExperienceHome(),
     const Cart(),
     const MyPage()
   ];
