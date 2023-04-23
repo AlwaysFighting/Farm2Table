@@ -11,7 +11,7 @@ final List<String> imgList = [
 ];
 
 class ExperienceHome extends StatefulWidget {
-  ExperienceHome({Key? key}) : super(key: key);
+  const ExperienceHome({Key? key}) : super(key: key);
 
   @override
   State<ExperienceHome> createState() => _ExperienceHomeState();
@@ -23,9 +23,9 @@ class _ExperienceHomeState extends State<ExperienceHome> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      imgList.forEach((imageUrl) {
+      for (var imageUrl in imgList) {
         precacheImage(NetworkImage(imageUrl), context);
-      });
+      }
     });
     super.initState();
   }
@@ -41,8 +41,8 @@ class _ExperienceHomeState extends State<ExperienceHome> {
               buttonCarouselController: buttonCarouselController,
             ),
             const SizedBox(height: 15.0),
-            Padding(
-              padding: const EdgeInsets.only(left: 24),
+            const Padding(
+              padding: EdgeInsets.only(left: 24),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -64,9 +64,9 @@ class _ExperienceHomeState extends State<ExperienceHome> {
       .map(
         (item) => Container(
           child: Container(
-            margin: EdgeInsets.all(5.0),
+            margin: const EdgeInsets.all(5.0),
             child: ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(5.0)),
+              borderRadius: const BorderRadius.all(Radius.circular(5.0)),
               child: Stack(
                 children: <Widget>[
                   Image.network(item, fit: BoxFit.cover, width: 1000.0),
@@ -75,7 +75,7 @@ class _ExperienceHomeState extends State<ExperienceHome> {
                     left: 0.0,
                     right: 0.0,
                     child: Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         gradient: LinearGradient(
                           colors: [
                             Color.fromARGB(200, 0, 0, 0),
@@ -85,11 +85,11 @@ class _ExperienceHomeState extends State<ExperienceHome> {
                           end: Alignment.topCenter,
                         ),
                       ),
-                      padding: EdgeInsets.symmetric(
+                      padding: const EdgeInsets.symmetric(
                           vertical: 10.0, horizontal: 20.0),
                       child: Text(
                         'No. ${imgList.indexOf(item)} image',
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 12.0,
                           fontWeight: FontWeight.bold,
