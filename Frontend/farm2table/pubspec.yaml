@@ -60,6 +60,13 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+  assets:
+    - assets/Images/fruit/
+    - assets/Images/farmer/
+    - assets/Images/orange_farmer/
+    - assets/Images/orange_market/
+    - assets/Images/vegetable/
+
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
