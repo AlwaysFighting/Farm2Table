@@ -10,3 +10,4 @@ const textColor3 = Color(0xFFC4C4C4);
 const alarmColor = Color(0xFF4185ED);
 
 const lineColor = Color(0xFFEEEEEE);
+const subLineColor = Color(0xFFE1E1E1);
