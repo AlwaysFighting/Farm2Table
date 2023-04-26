@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:farm2table/Const/colors.dart';
 import 'package:flutter/material.dart';
 
 final List<String> imgList = [
@@ -33,67 +34,206 @@ class _ExperienceHomeState extends State<ExperienceHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
         child: Column(
           children: [
-            _Banner(
-              imageSliders: imageSliders,
-              buttonCarouselController: buttonCarouselController,
-            ),
-            const SizedBox(height: 15.0),
+            const _banner(),
+            const SizedBox(height: 25.0),
             Padding(
               padding: const EdgeInsets.only(left: 24),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Text(
+                  const Text(
                     "체험 프로그램 카테고리",
-                    style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w700),
+                    style: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.w700,
+                        color: subColor),
                   ),
+                  const SizedBox(height: 18),
+                  Row(
+                    children: const [
+                      _categoryCard(
+                        title: '과일',
+                        image: 'assets/Images/fruit/fruit.png',
+                      ),
+                      SizedBox(width: 30),
+                      _categoryCard(
+                        title: '채소',
+                        image: 'assets/Images/fruit/veget.png',
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 35),
+                  const Text(
+                    "! 마감 입박 프로그래밍 !",
+                    style: TextStyle(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.w700,
+                        color: subColor),
+                  ),
+                  const SizedBox(height: 18),
                 ],
               ),
             ),
+            renderGridViewBuilder(),
           ],
         ),
       ),
     );
   }
+}
 
-  final List<Widget> imageSliders = imgList
-      .map(
-        (item) => Container(
-          child: Container(
-            margin: EdgeInsets.all(5.0),
-            child: ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(5.0)),
-              child: Stack(
-                children: <Widget>[
-                  Image.network(item, fit: BoxFit.cover, width: 1000.0),
-                  Positioned(
-                    bottom: 0.0,
-                    left: 0.0,
-                    right: 0.0,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [
-                            Color.fromARGB(200, 0, 0, 0),
-                            Color.fromARGB(0, 0, 0, 0)
-                          ],
-                          begin: Alignment.bottomCenter,
-                          end: Alignment.topCenter,
+class _banner extends StatelessWidget {
+  const _banner({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return CarouselSlider(
+      options: CarouselOptions(
+        autoPlay: false,
+        autoPlayInterval: const Duration(seconds: 3),
+        autoPlayAnimationDuration: const Duration(milliseconds: 800),
+        autoPlayCurve: Curves.fastOutSlowIn,
+        viewportFraction: 1.0,
+        scrollDirection: Axis.horizontal,
+        aspectRatio: 1.9,
+        initialPage: 1,
+      ),
+      items: imgList
+          .map((item) => ClipRRect(
+            child: Stack(
+              children: <Widget>[
+                Image.network(
+                  item,
+                  fit: BoxFit.cover,
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                ),
+                Positioned(
+                  bottom: 0.0,
+                  right: 0.0,
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          Color.fromARGB(50, 0, 0, 0),
+                          Color.fromARGB(0, 0, 0, 0)
+                        ],
+                        begin: Alignment.bottomCenter,
+                        end: Alignment.topCenter,
+                      ),
+                    ),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 10.0, horizontal: 20.0),
+                    child: Text(
+                      '${imgList.indexOf(item) + 1}/6',
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 10.0,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ))
+          .toList(),
+    );
+  }
+}
+
+class ProgramCard extends StatelessWidget {
+  const ProgramCard({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        SizedBox(
+          width: 155,
+          height: 195,
+          child: Card(
+            elevation: 0,
+            color: Colors.white,
+            child: InkWell(
+              onTap: () {},
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  // 이미지
+                  Stack(
+                    children: [
+                      Image.asset(
+                        'assets/Images/vegetable/Lettuce.png',
+                        fit: BoxFit.cover,
+                      ),
+                      Positioned(
+                        bottom: 0,
+                        left: 0,
+                        right: 0,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: const BorderRadius.only(
+                              bottomLeft: Radius.circular(21.0),
+                              bottomRight: Radius.circular(21.0),
+                            ),
+                            color: Colors.black.withOpacity(0.5),
+                          ),
+                          padding: const EdgeInsets.all(5.0),
+                          child: const Center(
+                            child: Text(
+                              '마감 1일 전',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 13,
+                              ),
+                            ),
+                          ),
                         ),
                       ),
-                      padding: EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 20.0),
-                      child: Text(
-                        'No. ${imgList.indexOf(item)} image',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 12.0,
-                          fontWeight: FontWeight.bold,
+                      const Positioned(
+                        top: 7,
+                        right: 12,
+                        child: Text(
+                          '9/10',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                          ),
                         ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 9.0),
+                    child: Center(
+                      child: Column(
+                        children: const [
+                          Text(
+                            '[상추 재배하기]',
+                            style: TextStyle(
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.w700,
+                                color: textColor1),
+                          ),
+                          SizedBox(height: 8),
+                          Text(
+                            '2023년 6월 1일',
+                            style: TextStyle(
+                                fontSize: 10.0,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xFFA8A8A8)),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -102,35 +242,85 @@ class _ExperienceHomeState extends State<ExperienceHome> {
             ),
           ),
         ),
-      )
-      .toList();
+      ],
+    );
+  }
 }
 
-class _Banner extends StatelessWidget {
-  const _Banner({
-    required this.imageSliders,
-    required this.buttonCarouselController,
-  });
+Widget renderGridViewBuilder() {
+  return GridView.builder(
+    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      crossAxisCount: 2,
+      childAspectRatio: 1,
+      crossAxisSpacing: 0,
+      mainAxisSpacing: 5.0,
+    ),
+    itemBuilder: (context, index) {
+      return const ProgramCard();
+    },
+    physics: const NeverScrollableScrollPhysics(),
+    shrinkWrap: true,
+    // 몇 개까지 그릴 것인지
+    itemCount: 5,
+  );
+}
 
-  final List<Widget> imageSliders;
-  final CarouselController buttonCarouselController;
+class _categoryCard extends StatelessWidget {
+  final String title;
+  final String image;
+
+  final cardTextStyle = const TextStyle(
+      color: mainColor, fontSize: 15, fontWeight: FontWeight.w700);
+
+  const _categoryCard({required this.title, required this.image});
 
   @override
   Widget build(BuildContext context) {
-    return CarouselSlider(
-      items: imageSliders,
-      carouselController: buttonCarouselController,
-      options: CarouselOptions(
-        autoPlay: false,
-        autoPlayInterval: const Duration(seconds: 3),
-        autoPlayAnimationDuration: const Duration(milliseconds: 800),
-        autoPlayCurve: Curves.fastOutSlowIn,
-        enlargeCenterPage: true,
-        viewportFraction: 0.9,
-        enlargeFactor: 0.19,
-        scrollDirection: Axis.horizontal,
-        aspectRatio: 1.9,
-        initialPage: 1,
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(25.0),
+        boxShadow: const [
+          BoxShadow(
+            color: Color(0x25A1A1A1),
+            blurRadius: 4,
+            offset: Offset(4, 4), // X, Y 값 조정
+          ),
+        ],
+      ),
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(18.0),
+        ),
+        clipBehavior: Clip.hardEdge,
+        child: InkWell(
+          onTap: () {
+            debugPrint('Card tapped.');
+          },
+          child: SizedBox(
+            width: 150,
+            height: 91,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  title,
+                  style: cardTextStyle,
+                ),
+                const SizedBox(width: 5.0),
+                SizedBox(
+                  height: 17,
+                  width: 17,
+                  child: Image.asset(
+                    image,
+                    // 이미지 꽉차게 적용하기
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
