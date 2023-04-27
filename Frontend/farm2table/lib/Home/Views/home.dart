@@ -33,9 +33,9 @@ class _HomeState extends State<Home> {
 
   }
   final imageList=[
-    Image.asset('assets/images/ad1.png', fit: BoxFit.cover),
-    Image.asset('assets/images/ad2.png', fit: BoxFit.cover),
-    Image.asset('assets/images/ad3.png', fit: BoxFit.cover),
+    Image.asset('assets/Images/home_images/ad1.png', fit: BoxFit.cover),
+    Image.asset('assets/Images/home_images/ad2.png', fit: BoxFit.cover),
+    Image.asset('assets/Images/home_images/ad3.png', fit: BoxFit.cover),
   ];
 
   Widget buildCarousel(){
@@ -60,26 +60,26 @@ class _HomeState extends State<Home> {
       ),);
   }
   final List<Map<String, dynamic>> items=[
-      {"image" : "assets/images/gul.png", "name": "귤"},
-      {"image" : "assets/images/strawberry.png", "name": "딸기"},
-      {"image" : "assets/images/koreanmelon.png", "name": "참외"},
-      {"image" : "assets/images/tomato.png", "name": "토마토"},
-      {"image" : "assets/images/watermelon.png", "name": "수박"},
-      {"image" : "assets/images/blueberry.png", "name": "블루베리"},
-      {"image" : "assets/images/apple.png", "name": "사과"},
-      {"image" : "assets/images/peer.png", "name": "배"},
-      {"image" : "assets/images/grape.png", "name": "포도"},
-      {"image" : "assets/images/gam.png", "name": "감"},
-      {"image" : "assets/images/sweetpotato.png", "name": "고구마"},
-      {"image" : "assets/images/potato.png", "name": "감자"},
-      {"image" : "assets/images/sangchu.png", "name": "상추"},
-      {"image" : "assets/images/corn.png", "name": "옥수수"},
-      {"image" : "assets/images/gochu.png", "name": "고추"},
-      {"image" : "assets/images/mushroom.png", "name": "버섯"},
-      {"image" : "assets/images/moo.png", "name": "무"},
-      {"image" : "assets/images/oee.png", "name": "오이"},
-      {"image" : "assets/images/letuce.png", "name": "배추"},
-      {"image" : "assets/images/carrot.png", "name": "당근"},
+      {"image" : "assets/Images/home_images/gul.png", "name": "귤"},
+      {"image" : "assets/Images/home_images/strawberry.png", "name": "딸기"},
+      {"image" : "assets/Images/home_images/koreanmelon.png", "name": "참외"},
+      {"image" : "assets/Images/home_images/tomato.png", "name": "토마토"},
+      {"image" : "assets/Images/home_images/watermelon.png", "name": "수박"},
+      {"image" : "assets/Images/home_images/blueberry.png", "name": "블루베리"},
+      {"image" : "assets/Images/home_images/apple.png", "name": "사과"},
+      {"image" : "assets/Images/home_images/peer.png", "name": "배"},
+      {"image" : "assets/Images/home_images/grape.png", "name": "포도"},
+      {"image" : "assets/Images/home_images/gam.png", "name": "감"},
+      {"image" : "assets/Images/home_images/sweetpotato.png", "name": "고구마"},
+      {"image" : "assets/Images/home_images/potato.png", "name": "감자"},
+      {"image" : "assets/Images/home_images/sangchu.png", "name": "상추"},
+      {"image" : "assets/Images/home_images/corn.png", "name": "옥수수"},
+      {"image" : "assets/Images/home_images/gochu.png", "name": "고추"},
+      {"image" : "assets/Images/home_images/mushroom.png", "name": "버섯"},
+      {"image" : "assets/Images/home_images/moo.png", "name": "무"},
+      {"image" : "assets/Images/home_images/oee.png", "name": "오이"},
+      {"image" : "assets/Images/home_images/letuce.png", "name": "배추"},
+      {"image" : "assets/Images/home_images/carrot.png", "name": "당근"},
     ];
 
   Widget category(){
