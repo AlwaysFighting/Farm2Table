@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   carousel_slider: ^4.2.1
   flutter_screenutil: ^5.7.0
+  hexcolor: ^3.0.1
 
 dev_dependencies:
   flutter_test:
@@ -66,10 +67,10 @@ flutter:
     - assets/Images/orange_farmer/
     - assets/Images/orange_market/
     - assets/Images/vegetable/
+    - assets/images/
 
   # To add assets to your application, add an assets section, like this:
-  assets:
-    - assets/images/
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

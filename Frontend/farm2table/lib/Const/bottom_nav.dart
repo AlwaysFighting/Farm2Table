@@ -23,7 +23,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
   final List<Widget> _widgetOptions = <Widget>[
     const Home(),
     const MarketHomePage(),
-    const ExperienceHome(),
+    ExperienceHome(),
     const Cart(),
     const MyPage()
   ];
