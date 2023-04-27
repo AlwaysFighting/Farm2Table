@@ -5,13 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1bc6a83f-80ec-41f1-9c3b-f6dc879615ab" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/const/person.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/const/star.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/market/orangeBody.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/market/orangeMarketBanner1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_detail_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/ios/Podfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/ios/Runner/GoogleService-Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/ios/Runner/GoogleService-Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/ios/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/pubspec.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/farm2table/lib/Login/login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/android/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/farm2table/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/farm2table/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/farm2table/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/pubspec.yaml" afterDir="false" />
