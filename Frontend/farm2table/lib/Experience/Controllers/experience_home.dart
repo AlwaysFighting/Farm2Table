@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:farm2table/Const/colors.dart';
+import 'package:farm2table/Experience/Controllers/experience_detail_page.dart';
 import 'package:flutter/material.dart';
 
 final List<String> imgList = [
@@ -165,7 +166,12 @@ class ProgramCard extends StatelessWidget {
             elevation: 0,
             color: Colors.white,
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (BuildContext context) {
+                      return const ExperienceDetailPage();
+                    }));
+              },
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
