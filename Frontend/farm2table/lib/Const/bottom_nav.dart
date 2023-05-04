@@ -5,6 +5,8 @@ import '../Cart/Views/cart.dart';
 import '../Experience/Controllers/experience_home.dart';
 import '../Home/Views/home.dart';
 import '../MyPage/Views/mypage_home.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:farm2table/Login/login.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({Key? key}) : super(key: key);
@@ -30,12 +32,24 @@ class _BottomNavigationState extends State<BottomNavigation> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: _widgetOptions.elementAt(currentIndex),
+    return SafeArea(child: Scaffold(
+      body: StreamBuilder(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        //snapshot 데이터 null이 될수 있다
+        builder: (BuildContext context, AsyncSnapshot<User?> snapshot){
+          if(!snapshot.hasData){
+            return Login();
+          }else{
+            return Scaffold(
+              body: SafeArea(
+                child: _widgetOptions.elementAt(currentIndex),
+              ),
+              bottomNavigationBar: _bottomNavigation(),
+            );
+          }
+        },
       ),
-      bottomNavigationBar: _bottomNavigation(),
-    );
+    ));
   }
 
   BottomNavigationBar _bottomNavigation() {

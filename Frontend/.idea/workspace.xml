@@ -5,55 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1bc6a83f-80ec-41f1-9c3b-f6dc879615ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/home_images/ad1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/home_images/ad2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/home_images/ad3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/home_images/apple.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/home_images/blueberry.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/home_images/carrot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/home_images/corn.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/home_images/gam.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/home_images/gochu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/home_images/grape.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/home_images/gul.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/home_images/koreanmelon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/home_images/letuce.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/home_images/moo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/home_images/mushroom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/home_images/oee.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/home_images/peer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/home_images/potato.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/home_images/sangchu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/home_images/strawberry.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/home_images/sweetpotato.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/home_images/tomato.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/home_images/watermelon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/assets/images/ad1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/assets/images/ad2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/assets/images/ad3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/assets/images/apple.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/assets/images/blueberry.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/assets/images/carrot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/assets/images/corn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/assets/images/gam.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/assets/images/gochu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/assets/images/grape.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/assets/images/gul.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/assets/images/koreanmelon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/assets/images/letuce.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/assets/images/moo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/assets/images/mushroom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/assets/images/oee.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/assets/images/peer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/assets/images/potato.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/assets/images/sangchu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/assets/images/strawberry.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/assets/images/sweetpotato.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/assets/images/tomato.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/assets/images/watermelon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/lib/Home/Views/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/lib/Home/Views/home.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/farm2table/lib/Login/login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/linux/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/linux/flutter/generated_plugin_registrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/linux/flutter/generated_plugin_registrant.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/linux/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/linux/flutter/generated_plugins.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/farm2table/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/windows/flutter/generated_plugin_registrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/windows/flutter/generated_plugin_registrant.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/windows/flutter/generated_plugins.cmake" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,21 +34,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/mokjeong-a/Desktop/Farm2Table/Frontend&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;dart.settings&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "io.flutter.reload.alreadyRun": "true",
+    "last_opened_file_path": "C:/farm2table/Frontend",
+    "settings.editor.selected.configurable": "dart.settings",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/farm2table/assets/image" />
