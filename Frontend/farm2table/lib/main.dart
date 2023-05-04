@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Const/bottom_nav.dart';
-import 'package:flutter_screenutil/src/screen_util.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
-  //WidgetsFlutterBinding.ensureInitialized();
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(myapp());
 }
 class myapp extends StatelessWidget{
