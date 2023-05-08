@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1bc6a83f-80ec-41f1-9c3b-f6dc879615ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/const/person.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/const/star.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/market/orangeBody.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/market/orangeMarketBanner1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_detail_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_review_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_home.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/farm2table/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/pubspec.yaml" afterDir="false" />
@@ -24,6 +20,8 @@
       <change beforePath="$PROJECT_DIR$/farm2table/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/farm2table/windows/flutter/generated_plugin_registrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/windows/flutter/generated_plugin_registrant.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/farm2table/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/windows/flutter/generated_plugins.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/lib/Const/colors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/lib/Const/colors.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_detail_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_detail_page.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
