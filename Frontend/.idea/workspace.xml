@@ -23,12 +23,18 @@
       <change beforePath="$PROJECT_DIR$/farm2table/lib/Const/colors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/lib/Const/colors.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_detail_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_detail_page.dart" afterDir="false" />
     </list>
+    <list default="true" id="1bc6a83f-80ec-41f1-9c3b-f6dc879615ab" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="feat/#5-detail_program_page-jeong" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
