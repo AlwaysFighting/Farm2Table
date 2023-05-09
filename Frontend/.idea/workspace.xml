@@ -5,25 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1bc6a83f-80ec-41f1-9c3b-f6dc879615ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_review_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/farm2table/ios/Runner/GoogleService-Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_home.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/pubspec.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/farm2table/lib/Login/login.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/android/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/linux/flutter/generated_plugin_registrant.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/linux/flutter/generated_plugin_registrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/linux/flutter/generated_plugin_registrant.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/linux/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/linux/flutter/generated_plugins.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/windows/flutter/generated_plugin_registrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/windows/flutter/generated_plugin_registrant.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/windows/flutter/generated_plugins.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/lib/Const/colors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/lib/Const/colors.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_detail_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_detail_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/ios/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/ios/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/ios/Runner.xcworkspace/contents.xcworkspacedata" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/ios/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/lib/Const/colors 2.dart" beforeDir="false" />
     </list>
-    <list default="true" id="1bc6a83f-80ec-41f1-9c3b-f6dc879615ab" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$/.." value="feat/#5-detail_program_page-jeong" />
+        <entry key="$PROJECT_DIR$/.." value="feat/#5-program_detail-jeong" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -48,21 +38,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "cidr.known.project.marker": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "C:/farm2table/Frontend",
-    "settings.editor.selected.configurable": "dart.settings",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/farm2table/Frontend&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;dart.settings&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/farm2table/assets/Images/const" />
