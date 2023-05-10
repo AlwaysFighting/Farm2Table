@@ -41,6 +41,7 @@ dependencies:
   firebase_auth: ^4.4.2
   firebase_core: ^2.10.0
   google_sign_in: ^6.1.0
+  cloud_firestore: ^4.6.0
 
 dev_dependencies:
   flutter_test:
@@ -72,6 +73,7 @@ flutter:
     - assets/Images/vegetable/
     - assets/Images/home_images/
     - assets/Images/login_button.png
+    - assets/Images/
 
   # To add assets to your application, add an assets section, like this:
 
