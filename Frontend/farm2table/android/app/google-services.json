@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1020822533225",
+    "project_id": "farm2table-c05a3",
+    "storage_bucket": "farm2table-c05a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020822533225:android:0c021d99115d6b6733def8",
+        "android_client_info": {
+          "package_name": "com.example.farm2table"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1020822533225-9k480gonpsphiq16rhl92pdn79hiev53.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.farm2table",
+            "certificate_hash": "c009d0438bc128c4306ed0fd99e7a4db43a9882c"
+          }
+        },
+        {
+          "client_id": "1020822533225-dn10mg1mahpvr4r3c529a8q53nr7n07a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCegKBll4lSJFlrbEklnojDF33f8u7Qih4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1020822533225-41jp1e0ciov43d9se7tbj7v0hgtb6v9b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
