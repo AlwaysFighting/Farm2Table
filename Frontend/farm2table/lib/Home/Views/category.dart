@@ -91,7 +91,13 @@ class CategoryState extends State<Category>{
                 });
           }
           else{
-            return CircularProgressIndicator();
+            return Center(
+              child: Container(
+                height: 30,
+                width: 30,
+                child: CircularProgressIndicator(),
+              ),
+            );
           }
       },
       ),
