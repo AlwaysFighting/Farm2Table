@@ -13,14 +13,15 @@ class myapp extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return ScreenUtilInit(
-      designSize: const Size(390,844),
-        builder: (context, child){
-           return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            home: Scaffold(
-              body: BottomNavigation(),
-            ),
-          );
-        });
+      designSize: const Size(390, 844),
+      builder: (context, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: Scaffold(
+            body: BottomNavigation(),
+          ),
+        );
+      },
+    );
   }
 }
