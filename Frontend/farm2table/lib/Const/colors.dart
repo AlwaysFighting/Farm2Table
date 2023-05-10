@@ -12,3 +12,6 @@ const alarmColor = Color(0xFF4185ED);
 
 const lineColor = Color(0xFFEEEEEE);
 const subLineColor = Color(0xFFE1E1E1);
+
+const ratingColor = Color(0xFFFFC700);
+const ratingColor2 = Color(0xFFE0E0E0);

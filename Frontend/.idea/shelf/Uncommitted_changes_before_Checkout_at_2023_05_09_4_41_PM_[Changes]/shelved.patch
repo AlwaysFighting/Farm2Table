@@ -1,0 +1,79 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -5,25 +5,15 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="1bc6a83f-80ec-41f1-9c3b-f6dc879615ab" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_review_page.dart" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/farm2table/ios/Runner/GoogleService-Info.plist" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_home.dart" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/farm2table/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/pubspec.yaml" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/farm2table/lib/Login/login.dart" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/farm2table/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/android/build.gradle" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/farm2table/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/ios/Podfile" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/farm2table/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/farm2table/ios/Runner.xcworkspace/contents.xcworkspacedata" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/ios/Runner.xcworkspace/contents.xcworkspacedata" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/farm2table/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/ios/Runner/Info.plist" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/farm2table/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/lib/main.dart" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/farm2table/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/linux/flutter/generated_plugin_registrant.cc" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/farm2table/linux/flutter/generated_plugin_registrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/linux/flutter/generated_plugin_registrant.h" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/farm2table/linux/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/linux/flutter/generated_plugins.cmake" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/farm2table/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/farm2table/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/pubspec.lock" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/farm2table/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/farm2table/windows/flutter/generated_plugin_registrant.h" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/windows/flutter/generated_plugin_registrant.h" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/farm2table/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/windows/flutter/generated_plugins.cmake" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/farm2table/lib/Const/colors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/lib/Const/colors.dart" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_detail_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_detail_page.dart" afterDir="false" />
+     </list>
+-    <list default="true" id="1bc6a83f-80ec-41f1-9c3b-f6dc879615ab" name="Changes" comment="" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -51,6 +41,7 @@
+   <component name="PropertiesComponent"><![CDATA[{
+   "keyToString": {
+     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
++    "Git.Branch.Popup.ShowAllRemotes": "true",
+     "RunOnceActivity.OpenProjectViewOnStart": "true",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
+     "RunOnceActivity.cidr.known.project.marker": "true",
+@@ -58,13 +49,17 @@
+     "cidr.known.project.marker": "true",
+     "dart.analysis.tool.window.visible": "false",
+     "io.flutter.reload.alreadyRun": "true",
+-    "last_opened_file_path": "C:/farm2table/Frontend",
++    "last_opened_file_path": "/Users/mokjeong-a/Desktop/Farm2Table/Frontend/farm2table/ios/Runner",
+     "settings.editor.selected.configurable": "dart.settings",
+     "show.migrate.to.gradle.popup": "false"
+   }
+ }]]></component>
+   <component name="RecentsManager">
++    <key name="CopyFile.RECENT_KEYS">
++      <recent name="$PROJECT_DIR$/farm2table/ios/Runner" />
++    </key>
+     <key name="MoveFile.RECENT_KEYS">
++      <recent name="$PROJECT_DIR$/farm2table/ios/Runner" />
+       <recent name="$PROJECT_DIR$/farm2table/assets/Images/const" />
+       <recent name="$PROJECT_DIR$/farm2table/assets/Images/market" />
+       <recent name="$PROJECT_DIR$/farm2table/assets/Images/home_images" />
+Index: farm2table/ios/Podfile
+===================================================================
+diff --git a/farm2table/ios/Podfile b/farm2table/ios/Podfile
+--- a/farm2table/ios/Podfile	
++++ b/farm2table/ios/Podfile	
+@@ -1,5 +1,5 @@
+ # Uncomment this line to define a global platform for your project
+-# platform :ios, '11.0'
++platform :ios, '11.0'
+ 
+ # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
+ ENV['COCOAPODS_DISABLE_STATS'] = 'true'

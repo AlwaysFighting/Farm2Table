@@ -38,8 +38,8 @@ dependencies:
   carousel_slider: ^4.2.1
   flutter_screenutil: ^5.7.0
   hexcolor: ^3.0.1
-  firebase_auth: ^4.4.2
-  firebase_core: ^2.10.0
+  firebase_auth: ^4.5.0
+  firebase_core: ^2.11.0
   google_sign_in: ^6.1.0
   cloud_firestore: ^4.6.0
 
@@ -72,6 +72,8 @@ flutter:
     - assets/Images/orange_market/
     - assets/Images/vegetable/
     - assets/Images/home_images/
+    - assets/Images/market/
+    - assets/Images/const/
     - assets/Images/login_button.png
     - assets/Images/
 
