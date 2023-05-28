@@ -169,7 +169,7 @@ class ProgramCard extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                     MaterialPageRoute(builder: (BuildContext context) {
-                      return const ExperienceDetailPage();
+                      return const ExperienceDetailPage(programNum: 1,);
                     }));
               },
               child: Column(
