@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../../Const/colors.dart';
+import 'experience_review_page.dart';
 
 class ExperienceDetailPage extends StatefulWidget {
   final int programNum;
@@ -59,8 +60,6 @@ class _ExperienceDetailPageState extends State<ExperienceDetailPage> {
     programNumber = widget.programNum ?? 1;
   }
 
-  CollectionReference users = FirebaseFirestore.instance.collection('users');
-
   @override
   Widget build(BuildContext context) {
     CollectionReference experienceDetail =
@@ -86,7 +85,7 @@ class _ExperienceDetailPageState extends State<ExperienceDetailPage> {
               return const Center(child: Text('ERROR'));
             }
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return const CircularProgressIndicator();
+              return const Center(child: CircularProgressIndicator());
             }
             if (snapshot.connectionState == ConnectionState.done) {
               Map<String, dynamic> data =
@@ -492,7 +491,10 @@ class _ExperienceDetailPageState extends State<ExperienceDetailPage> {
                               width: 324,
                               child: ElevatedButton(
                                 onPressed: () {
-                                  print("후기");
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                      builder: (BuildContext context) {
+                                    return const ExReviewPage();
+                                  }));
                                 },
                                 style: ElevatedButton.styleFrom(
                                   primary: ratingColor2,
