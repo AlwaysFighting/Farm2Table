@@ -57,7 +57,7 @@ class _ExperienceDetailPageState extends State<ExperienceDetailPage> {
   @override
   void initState() {
     super.initState();
-    programNumber = widget.programNum ?? 1;
+    programNumber = widget.programNum;
   }
 
   @override
@@ -70,26 +70,60 @@ class _ExperienceDetailPageState extends State<ExperienceDetailPage> {
       body: NestedScrollView(
         headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
           return <Widget>[
-            const _AppBar(),
+            SliverAppBar(
+              expandedHeight: 221.0,
+              pinned: true,
+              foregroundColor: Colors.white,
+              backgroundColor: subColor,
+              flexibleSpace: FlexibleSpaceBar(
+                background:
+                    FutureBuilder<DocumentSnapshot<Map<String, dynamic>>>(
+                  future: experienceDetail
+                      .doc('Experience')
+                      .collection('Program')
+                      .doc('$programNumber')
+                      .get(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      Map<String, dynamic> data =
+                          snapshot.data?.data() as Map<String, dynamic>;
+                      var imageUrl = data['banner'];
+                      return Image.network(
+                        imageUrl,
+                        fit: BoxFit.cover,
+                      );
+                    } else if (snapshot.hasError) {
+                      return Text("Error: ${snapshot.error}");
+                    } else {
+                      return CircularProgressIndicator();
+                    }
+                  },
+                ),
+              ),
+              title: Text("제주 감귤 재배하기"),
+            )
           ];
         },
         body: FutureBuilder<DocumentSnapshot<Map<String, dynamic>>>(
           future: experienceDetail
               .doc('Experience')
               .collection('Program')
-              .doc('1')
+              .doc('$programNumber')
               .get(),
           builder:
               (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
-            if (snapshot.hasError) {
+                if (snapshot.hasError) {
               return const Center(child: Text('ERROR'));
             }
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const Center(child: CircularProgressIndicator());
             }
+            if (snapshot.data == null) {
+              return const Center(child: Text('데이터가 없습니다!'));
+            }
             if (snapshot.connectionState == ConnectionState.done) {
               Map<String, dynamic> data =
-                  snapshot.data!.data() as Map<String, dynamic>;
+                  snapshot.data?.data() as Map<String, dynamic>;
               return SingleChildScrollView(
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 50.0),
@@ -260,230 +294,7 @@ class _ExperienceDetailPageState extends State<ExperienceDetailPage> {
                             ),
                           ),
                           const SizedBox(height: 25.0),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                              left: 17.0,
-                            ),
-                            child: SingleChildScrollView(
-                              scrollDirection: Axis.horizontal,
-                              child: Row(
-                                children: [
-                                Container(
-                                height: 108,
-                                width: 176,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  border: Border.all(
-                                    color: const Color(0xFFD9D9D9),
-                                    width: 1,
-                                  ),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(9.0),
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        " SWU",
-                                        style: textStyle.copyWith(
-                                          fontSize: 10.0,
-                                          color: const Color(0xFF747373),
-                                        ),
-                                      ),
-                                      Row(
-                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                        children: [
-                                          for (int i = 0; i < 5; i++)
-                                            Icon(
-                                              i < rating.floor()
-                                                  ? Icons.star
-                                                  : i - rating < 0.5
-                                                  ? Icons.star_half
-                                                  : Icons.star_border,
-                                              color: ratingColor,
-                                              size: 15.0,
-                                            ),
-                                          const SizedBox(width: 4.0),
-                                          Text(
-                                            "2022.06.07",
-                                            style: textStyle.copyWith(
-                                              fontSize: 10.0,
-                                              color: const Color(0xFFAEAEAE),
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      const SizedBox(height: 10.0),
-                                      Column(
-                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            "신선하고 색다른 경험",
-                                            style: textStyle.copyWith(
-                                              fontWeight: FontWeight.w600,
-                                              fontSize: 12.0,
-                                            ),
-                                          ),
-                                          const SizedBox(height: 5.0),
-                                          Text(
-                                            "제주 감귤 따기 체험을 하러 갔는데, 생각보다 너무 재미있었습니다...",
-                                            style: textStyle.copyWith(
-                                              fontWeight: FontWeight.w500,
-                                              fontSize: 11.0,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                                  const SizedBox(width: 12.0),
-                                Container(
-                                  height: 108,
-                                  width: 176,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                    border: Border.all(
-                                      color: const Color(0xFFD9D9D9),
-                                      width: 1,
-                                    ),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(9.0),
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          " SWU",
-                                          style: textStyle.copyWith(
-                                            fontSize: 10.0,
-                                            color: const Color(0xFF747373),
-                                          ),
-                                        ),
-                                        Row(
-                                          crossAxisAlignment: CrossAxisAlignment.center,
-                                          children: [
-                                            for (int i = 0; i < 5; i++)
-                                              Icon(
-                                                i < rating.floor()
-                                                    ? Icons.star
-                                                    : i - rating < 0.5
-                                                    ? Icons.star_half
-                                                    : Icons.star_border,
-                                                color: ratingColor,
-                                                size: 15.0,
-                                              ),
-                                            const SizedBox(width: 4.0),
-                                            Text(
-                                              "2022.06.07",
-                                              style: textStyle.copyWith(
-                                                fontSize: 10.0,
-                                                color: const Color(0xFFAEAEAE),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        const SizedBox(height: 10.0),
-                                        Column(
-                                          crossAxisAlignment: CrossAxisAlignment.center,
-                                          children: [
-                                            Text(
-                                              "신선하고 색다른 경험",
-                                              style: textStyle.copyWith(
-                                                fontWeight: FontWeight.w600,
-                                                fontSize: 12.0,
-                                              ),
-                                            ),
-                                            const SizedBox(height: 5.0),
-                                            Text(
-                                              "제주 감귤 따기 체험을 하러 갔는데, 생각보다 너무 재미있었습니다...",
-                                              style: textStyle.copyWith(
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 11.0,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                  const SizedBox(width: 12.0),
-                                Container(
-                                  height: 108,
-                                  width: 176,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                    border: Border.all(
-                                      color: const Color(0xFFD9D9D9),
-                                      width: 1,
-                                    ),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(9.0),
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          " SWU",
-                                          style: textStyle.copyWith(
-                                            fontSize: 10.0,
-                                            color: const Color(0xFF747373),
-                                          ),
-                                        ),
-                                        Row(
-                                          crossAxisAlignment: CrossAxisAlignment.center,
-                                          children: [
-                                            for (int i = 0; i < 5; i++)
-                                              Icon(
-                                                i < rating.floor()
-                                                    ? Icons.star
-                                                    : i - rating < 0.5
-                                                    ? Icons.star_half
-                                                    : Icons.star_border,
-                                                color: ratingColor,
-                                                size: 15.0,
-                                              ),
-                                            const SizedBox(width: 4.0),
-                                            Text(
-                                              "2022.06.07",
-                                              style: textStyle.copyWith(
-                                                fontSize: 10.0,
-                                                color: const Color(0xFFAEAEAE),
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                        const SizedBox(height: 10.0),
-                                        Column(
-                                          crossAxisAlignment: CrossAxisAlignment.center,
-                                          children: [
-                                            Text(
-                                              "신선하고 색다른 경험",
-                                              style: textStyle.copyWith(
-                                                fontWeight: FontWeight.w600,
-                                                fontSize: 12.0,
-                                              ),
-                                            ),
-                                            const SizedBox(height: 5.0),
-                                            Text(
-                                              "제주 감귤 따기 체험을 하러 갔는데, 생각보다 너무 재미있었습니다...",
-                                              style: textStyle.copyWith(
-                                                fontWeight: FontWeight.w500,
-                                                fontSize: 11.0,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                ],
-                              ),
-                            ),
-                          ),
+                          Reviews(textStyle: textStyle, rating: rating, programInt: programNumber,),
                           const SizedBox(height: 20.0),
                           Center(
                             child: SizedBox(
@@ -493,7 +304,9 @@ class _ExperienceDetailPageState extends State<ExperienceDetailPage> {
                                 onPressed: () {
                                   Navigator.of(context).push(MaterialPageRoute(
                                       builder: (BuildContext context) {
-                                    return const ExReviewPage();
+                                    return ExReviewPage(
+                                      programNum: programNumber,
+                                    );
                                   }));
                                 },
                                 style: ElevatedButton.styleFrom(
@@ -550,7 +363,8 @@ class _ExperienceDetailPageState extends State<ExperienceDetailPage> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                '${formatTimestamp(data['endDate'], 'yyyy년 MM월 dd일 HH:mm')}',
+                                formatTimestamp(
+                                    data['endDate'], 'yyyy년 MM월 dd일 HH:mm'),
                                 style: textStyle,
                               ),
                               Text(
@@ -610,25 +424,139 @@ class _ExperienceDetailPageState extends State<ExperienceDetailPage> {
   }
 }
 
-class _AppBar extends StatelessWidget {
-  const _AppBar({
-    super.key,
-  });
+class Reviews extends StatelessWidget {
+  const Reviews({
+    Key? key,
+    required this.textStyle,
+    required this.rating,
+    required this.programInt,
+  }) : super(key: key);
+
+  final TextStyle textStyle;
+  final double rating;
+  final int programInt;
+
+  String formatTimestamp(Timestamp timestamp, String format) {
+    DateTime dateTime = timestamp.toDate();
+    String formattedDateTime = DateFormat(format).format(dateTime);
+    return formattedDateTime;
+  }
 
   @override
   Widget build(BuildContext context) {
-    return SliverAppBar(
-      expandedHeight: 221.0,
-      pinned: true,
-      foregroundColor: Colors.white,
-      backgroundColor: subColor,
-      flexibleSpace: FlexibleSpaceBar(
-        background: Image.asset(
-          'assets/Images/market/orangeMarketBanner1.png',
-          fit: BoxFit.cover,
-        ),
+    CollectionReference experienceDetail =
+    FirebaseFirestore.instance.collection('market1');
+
+    return Padding(
+      padding: const EdgeInsets.only(
+        left: 17.0,
       ),
-      title: Text("제주 감귤 재배하기"),
+      child: FutureBuilder<QuerySnapshot<Map<String, dynamic>>>(
+        future: experienceDetail
+            .doc('Experience')
+            .collection('Program')
+            .doc('$programInt')
+            .collection('reviews')
+            .get(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            List<QueryDocumentSnapshot> documents = snapshot.data!.docs;
+            return SizedBox(
+              height: 134,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 3,
+                shrinkWrap: true,
+                physics: const ClampingScrollPhysics(),
+                itemBuilder: (BuildContext context, int index) {
+                  Map<String, dynamic> data = documents[index].data() as Map<String, dynamic>;
+                  return Padding(
+                    padding: const EdgeInsets.only(right: 12.0),
+                    child: Container(
+                      height: 109,
+                      width: 181,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.0),
+                        border: Border.all(
+                          color: const Color(0xFFD9D9D9),
+                          width: 1,
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(9.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              data['nickname'],
+                              style: textStyle.copyWith(
+                                fontSize: 10.0,
+                                color: const Color(0xFF747373),
+                              ),
+                            ),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                for (int i = 0; i < 5; i++)
+                                  Icon(
+                                    i < data['stars'].floor()
+                                        ? Icons.star
+                                        : i - data['stars'] < 0.5
+                                        ? Icons.star_half
+                                        : Icons.star_border,
+                                    color: ratingColor,
+                                    size: 15.0,
+                                  ),
+                                const SizedBox(width: 4.0),
+                                Text(
+                                  formatTimestamp(data['dateTime'],
+                                      'yyyy년 MM월 dd일'),
+                                  style: textStyle.copyWith(
+                                    fontSize: 8.0,
+                                    color: const Color(0xFFAEAEAE),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 10.0),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  data['title'],
+                                  style: textStyle.copyWith(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 12.0,
+                                  ),
+                                ),
+                                const SizedBox(height: 5.0),
+                                Text(
+                                  data['subTitle'],
+                                  style: textStyle.copyWith(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 11.0,
+                                  ),
+                                  overflow: TextOverflow.ellipsis, // 글자가 넘칠 경우 "..."으로 축소
+                                  maxLines: 4,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            );
+          } else if (snapshot.hasError) {
+            return Text('Error: ${snapshot.error}');
+          } else {
+            return const CircularProgressIndicator();
+          }
+        },
+      ),
     );
   }
 }
+
