@@ -80,7 +80,118 @@ class _ExperienceHomeState extends State<ExperienceHome> {
                 ],
               ),
             ),
-            renderGridViewBuilder(),
+            GridView.builder(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 1,
+                crossAxisSpacing: 0,
+                mainAxisSpacing: 5.0,
+              ),
+              itemBuilder: (context, index) {
+                return Column(
+                  children: [
+                    SizedBox(
+                      width: 155,
+                      height: 195,
+                      child: Card(
+                        elevation: 0,
+                        color: Colors.white,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                builder: (BuildContext context) {
+                                  return ExperienceDetailPage(
+                                    programNum: index + 1,
+                                  );
+                                },
+                              ),
+                            );
+                          },
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              // 이미지
+                              Stack(
+                                children: [
+                                  Image.asset(
+                                    'assets/Images/vegetable/Lettuce.png',
+                                    fit: BoxFit.cover,
+                                  ),
+                                  Positioned(
+                                    bottom: 0,
+                                    left: 0,
+                                    right: 0,
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                        borderRadius: const BorderRadius.only(
+                                          bottomLeft: Radius.circular(21.0),
+                                          bottomRight: Radius.circular(21.0),
+                                        ),
+                                        color: Colors.black.withOpacity(0.5),
+                                      ),
+                                      padding: const EdgeInsets.all(5.0),
+                                      child: const Center(
+                                        child: Text(
+                                          '마감 1일 전',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 13,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const Positioned(
+                                    top: 7,
+                                    right: 12,
+                                    child: Text(
+                                      '9/10',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 10,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 9.0),
+                                child: Center(
+                                  child: Column(
+                                    children: const [
+                                      Text(
+                                        '[상추 재배하기]',
+                                        style: TextStyle(
+                                            fontSize: 15.0,
+                                            fontWeight: FontWeight.w700,
+                                            color: textColor1),
+                                      ),
+                                      SizedBox(height: 8),
+                                      Text(
+                                        '2023년 6월 1일',
+                                        style: TextStyle(
+                                            fontSize: 10.0,
+                                            fontWeight: FontWeight.w700,
+                                            color: Color(0xFFA8A8A8)),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                );
+              },
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              // 몇 개까지 그릴 것인지
+              itemCount: 5,
+            ),
           ],
         ),
       ),
@@ -148,127 +259,6 @@ class _banner extends StatelessWidget {
           .toList(),
     );
   }
-}
-
-class ProgramCard extends StatelessWidget {
-  const ProgramCard({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          width: 155,
-          height: 195,
-          child: Card(
-            elevation: 0,
-            color: Colors.white,
-            child: InkWell(
-              onTap: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (BuildContext context) {
-                      return const ExperienceDetailPage(programNum: 1,);
-                    }));
-              },
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  // 이미지
-                  Stack(
-                    children: [
-                      Image.asset(
-                        'assets/Images/vegetable/Lettuce.png',
-                        fit: BoxFit.cover,
-                      ),
-                      Positioned(
-                        bottom: 0,
-                        left: 0,
-                        right: 0,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: const BorderRadius.only(
-                              bottomLeft: Radius.circular(21.0),
-                              bottomRight: Radius.circular(21.0),
-                            ),
-                            color: Colors.black.withOpacity(0.5),
-                          ),
-                          padding: const EdgeInsets.all(5.0),
-                          child: const Center(
-                            child: Text(
-                              '마감 1일 전',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 13,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      const Positioned(
-                        top: 7,
-                        right: 12,
-                        child: Text(
-                          '9/10',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 10,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 9.0),
-                    child: Center(
-                      child: Column(
-                        children: const [
-                          Text(
-                            '[상추 재배하기]',
-                            style: TextStyle(
-                                fontSize: 15.0,
-                                fontWeight: FontWeight.w700,
-                                color: textColor1),
-                          ),
-                          SizedBox(height: 8),
-                          Text(
-                            '2023년 6월 1일',
-                            style: TextStyle(
-                                fontSize: 10.0,
-                                fontWeight: FontWeight.w700,
-                                color: Color(0xFFA8A8A8)),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-Widget renderGridViewBuilder() {
-  return GridView.builder(
-    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-      crossAxisCount: 2,
-      childAspectRatio: 1,
-      crossAxisSpacing: 0,
-      mainAxisSpacing: 5.0,
-    ),
-    itemBuilder: (context, index) {
-      return const ProgramCard();
-    },
-    physics: const NeverScrollableScrollPhysics(),
-    shrinkWrap: true,
-    // 몇 개까지 그릴 것인지
-    itemCount: 5,
-  );
 }
 
 class _categoryCard extends StatelessWidget {

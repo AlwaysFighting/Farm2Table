@@ -1,10 +1,12 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import '../../Const/colors.dart';
 
 class ExReviewPage extends StatefulWidget {
-  const ExReviewPage({Key? key}) : super(key: key);
+  const ExReviewPage({Key? key, required this.programNum}) : super(key: key);
+  final int programNum;
 
   @override
   State<ExReviewPage> createState() => _ExReviewPageState();
@@ -22,6 +24,20 @@ class _ExReviewPageState extends State<ExReviewPage> {
     fontSize: 13,
     fontWeight: FontWeight.w600,
   );
+
+  String formatTimestamp(Timestamp timestamp, String format) {
+    DateTime dateTime = timestamp.toDate();
+    String formattedDateTime = DateFormat(format).format(dateTime);
+    return formattedDateTime;
+  }
+
+  late int programNumber;
+
+  @override
+  void initState() {
+    super.initState();
+    programNumber = widget.programNum;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +63,7 @@ class _ExReviewPageState extends State<ExReviewPage> {
         future: experienceDetail
             .doc('Experience')
             .collection('Program')
-            .doc('1')
+            .doc('$programNumber')
             .collection('reviews')
             .get(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -71,7 +87,7 @@ class _ExReviewPageState extends State<ExReviewPage> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Container(
-                          height: 254,
+                          height: 300,
                           width: double.infinity,
                           decoration: BoxDecoration(
                             border: Border.all(
@@ -84,12 +100,13 @@ class _ExReviewPageState extends State<ExReviewPage> {
                           child: Padding(
                             padding: const EdgeInsets.only(left: 10.0, top: 10.0, bottom: 10.0, right: 12.0),
                             child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Row(
                                   children: [
                                     ClipOval(
                                       child: Image.network(
-                                        data['image'],
+                                        data['profile'],
                                         width: 40,
                                         height: 40,
                                         fit: BoxFit.cover,
@@ -107,17 +124,62 @@ class _ExReviewPageState extends State<ExReviewPage> {
                                                 i < data['stars'].floor()
                                                     ? Icons.star
                                                     : i - data['stars'] < 0.5
-                                                    ? Icons.star_half
-                                                    : Icons.star_border,
+                                                        ? Icons.star_half
+                                                        : Icons.star_border,
                                                 color: ratingColor,
                                                 size: 15.0,
                                               ),
+                                            const SizedBox(width: 4.0),
+                                            Text(
+                                              formatTimestamp(data['dateTime'],
+                                                  'yyyy년 MM월 dd일'),
+                                              style: const TextStyle(
+                                                color: Color(0xFFAEAEAE),
+                                                fontSize: 10.0,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                            ),
                                           ],
-                                        )
+                                        ),
                                       ],
-                                    )
+                                    ),
                                   ],
                                 ),
+                                const SizedBox(height: 18.0),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      data['title'],
+                                      style: const TextStyle(
+                                        color: Color(0xFF535353),
+                                        fontSize: 15.0,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 13.0),
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.circular(5.0),
+                                      child: Image.network(
+                                        data['image'],
+                                        width: 61,
+                                        height: 54,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                    const SizedBox(height: 13.0),
+                                    Text(
+                                      data['subTitle'],
+                                      style: const TextStyle(
+                                        color: Color(0xFF535353),
+                                        fontWeight: FontWeight.w500,
+                                        fontSize: 12.0,
+                                      ),
+                                      maxLines: 8, // 최대 줄 수
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  ],
+                                )
                               ],
                             ),
                           ),
@@ -131,6 +193,12 @@ class _ExReviewPageState extends State<ExReviewPage> {
           }
           return const CircularProgressIndicator();
         },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: subColor,
+        elevation: 2,
+        child: const Icon(Icons.add),
       ),
     );
   }

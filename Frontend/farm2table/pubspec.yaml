@@ -69,11 +69,10 @@ flutter:
   assets:
     - assets/Images/fruit/
     - assets/Images/farmer/
-    - assets/Images/orange_farmer/
-    - assets/Images/orange_market/
     - assets/Images/vegetable/
     - assets/Images/home_images/
     - assets/Images/market/
+    - assets/Images/market/LettuceMarket/
     - assets/Images/const/
     - assets/Images/login_button.png
     - assets/Images/

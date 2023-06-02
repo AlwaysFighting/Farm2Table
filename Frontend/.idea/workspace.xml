@@ -5,9 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1bc6a83f-80ec-41f1-9c3b-f6dc879615ab" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_05_09_3_58_PM__Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_05_09_4_41_PM__Changes_1 2.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/farm2table/assets/Images/market/LettuceMarket/lettuceBody.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/wrtie_review_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/assets/Images/market/orangeMarketBanner1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/assets/Images/orange_farmer/OrangeFarm1.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/assets/Images/orange_farmer/OrangeFarm2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/assets/Images/orange_farmer/OrangeFarm3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/assets/Images/orange_farmer/OrangeFarm4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/assets/Images/orange_market/DriedOrange.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/assets/Images/market/orange_market/DriedOrange.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/assets/Images/orange_market/OrangeCandies.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/assets/Images/market/orange_market/OrangeCandies.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/assets/Images/orange_market/OrangeJam.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/assets/Images/market/orange_market/OrangeJam.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/assets/Images/orange_market/OrangeJelly.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/assets/Images/market/orange_market/OrangeJelly.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/assets/Images/orange_market/OrangeJuice.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/assets/Images/market/orange_market/OrangeJuice.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_detail_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_detail_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_review_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/lib/Experience/Controllers/experience_review_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/farm2table/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/farm2table/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,7 +35,7 @@
         <entry key="$PROJECT_DIR$/.." value="feat/#5-program_detail-jeong" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/farm2table/ios" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -54,8 +69,9 @@
       <recent name="$PROJECT_DIR$/farm2table/ios/Runner" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/farm2table/assets/Images/const" />
+      <recent name="$PROJECT_DIR$/farm2table/assets/Images/market/LettuceMarket" />
       <recent name="$PROJECT_DIR$/farm2table/assets/Images/market" />
+      <recent name="$PROJECT_DIR$/farm2table/assets/Images/const" />
       <recent name="$PROJECT_DIR$/farm2table/assets/Images/home_images" />
       <recent name="$PROJECT_DIR$/farm2table/assets/image" />
     </key>
