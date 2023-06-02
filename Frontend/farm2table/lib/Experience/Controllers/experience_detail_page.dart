@@ -95,12 +95,12 @@ class _ExperienceDetailPageState extends State<ExperienceDetailPage> {
                     } else if (snapshot.hasError) {
                       return Text("Error: ${snapshot.error}");
                     } else {
-                      return CircularProgressIndicator();
+                      return const CircularProgressIndicator();
                     }
                   },
                 ),
               ),
-              title: Text("제주 감귤 재배하기"),
+              title: const Text("제주 감귤 재배하기"),
             )
           ];
         },
