@@ -1,7 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:farm2table/Const/colors.dart';
 import 'package:farm2table/Experience/Controllers/experience_detail_page.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 final List<String> imgList = [
   'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
@@ -22,6 +24,18 @@ class ExperienceHome extends StatefulWidget {
 class _ExperienceHomeState extends State<ExperienceHome> {
   CarouselController buttonCarouselController = CarouselController();
 
+  final titleStyle = const TextStyle(
+    color: alarmColor,
+    fontSize: 12,
+    fontWeight: FontWeight.w700,
+  );
+
+  final textStyle = const TextStyle(
+    color: textColor1,
+    fontSize: 13,
+    fontWeight: FontWeight.w600,
+  );
+
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -32,8 +46,34 @@ class _ExperienceHomeState extends State<ExperienceHome> {
     super.initState();
   }
 
+  String formatTimestamp(Timestamp timestamp, String format) {
+    DateTime dateTime = timestamp.toDate();
+    String formattedDateTime = DateFormat(format).format(dateTime);
+    return formattedDateTime;
+  }
+
+  String formatTimestampRelation(Timestamp timestamp) {
+    DateTime now = DateTime.now();
+    DateTime dateTime = timestamp.toDate();
+    Duration difference = now.difference(dateTime).abs();
+
+    if (difference.inHours < 1) {
+      return '${difference.inMinutes}분 전';
+    } else if (difference.inHours < 24) {
+      return '${difference.inHours}시간 전';
+    } else if (difference.inDays >= 1) {
+      return '${difference.inDays}일 전';
+    } else {
+      return '0일 전(마감)';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+
+    CollectionReference experienceDetail =
+    FirebaseFirestore.instance.collection('market1');
+
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -80,117 +120,142 @@ class _ExperienceHomeState extends State<ExperienceHome> {
                 ],
               ),
             ),
-            GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 1,
-                crossAxisSpacing: 0,
-                mainAxisSpacing: 5.0,
-              ),
-              itemBuilder: (context, index) {
-                return Column(
-                  children: [
-                    SizedBox(
-                      width: 155,
-                      height: 195,
-                      child: Card(
-                        elevation: 0,
-                        color: Colors.white,
-                        child: InkWell(
-                          onTap: () {
-                            Navigator.of(context).push(
-                              MaterialPageRoute(
-                                builder: (BuildContext context) {
-                                  return ExperienceDetailPage(
-                                    programNum: index + 1,
-                                  );
-                                },
-                              ),
-                            );
-                          },
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
+            FutureBuilder<QuerySnapshot<Map<String, dynamic>>>(
+              future: experienceDetail
+                  .doc('Experience')
+                  .collection('Program')
+                  .get(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  List<QueryDocumentSnapshot> documents = snapshot.data!.docs;
+                  return SizedBox(
+                    height: 182,
+                    child: GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: documents.length,
+                        childAspectRatio: 0.3,
+                        crossAxisSpacing: 0,
+                        mainAxisSpacing: 5.0,
+                      ),
+                      itemBuilder: (context, index) {
+                        if (index < documents.length) {
+                          Map<String, dynamic> data = documents[index].data() as Map<String, dynamic>;
+                          return Column(
                             children: [
-                              // 이미지
-                              Stack(
-                                children: [
-                                  Image.asset(
-                                    'assets/Images/vegetable/Lettuce.png',
-                                    fit: BoxFit.cover,
-                                  ),
-                                  Positioned(
-                                    bottom: 0,
-                                    left: 0,
-                                    right: 0,
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: const BorderRadius.only(
-                                          bottomLeft: Radius.circular(21.0),
-                                          bottomRight: Radius.circular(21.0),
-                                        ),
-                                        color: Colors.black.withOpacity(0.5),
+                              Card(
+                                elevation: 0,
+                                color: Colors.white,
+                                child: InkWell(
+                                  onTap: () {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (BuildContext context) {
+                                          return ExperienceDetailPage(
+                                            programNum: index + 1,
+                                          );
+                                        },
                                       ),
-                                      padding: const EdgeInsets.all(5.0),
-                                      child: const Center(
-                                        child: Text(
-                                          '마감 1일 전',
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 13,
+                                    );
+                                  },
+                                  child: Column(
+                                    children: [
+                                      Stack(
+                                        children: [
+                                          SizedBox(
+                                            height: 130,
+                                            width: 155,
+                                            child: ClipRRect(
+                                              borderRadius: BorderRadius.circular(21.0),
+                                              child: Image.network(
+                                                data['banner'],
+                                                fit: BoxFit.cover,
+                                              ),
+                                            ),
+                                          ),
+                                          Positioned(
+                                            bottom: 0,
+                                            left: 0,
+                                            right: 0,
+                                            child: Container(
+                                              decoration: BoxDecoration(
+                                                borderRadius: const BorderRadius.only(
+                                                  bottomLeft: Radius.circular(21.0),
+                                                  bottomRight: Radius.circular(21.0),
+                                                ),
+                                                color: Colors.black.withOpacity(0.5),
+                                              ),
+                                              padding: const EdgeInsets.all(5.0),
+                                              child: Center(
+                                                child: Text(
+                                                  "마감 ${formatTimestampRelation(data['endDate'])}",
+                                                  style: const TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 13,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          Positioned(
+                                            top: 7,
+                                            right: 12,
+                                            child: Text(
+                                              '${data["current_num"]}/${data["sum_people"]}',
+                                              style: const TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 10,
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.only(top: 10.0),
+                                        child: Center(
+                                          child: Column(
+                                            children: [
+                                              Text(
+                                                data["title"],
+                                                style: const TextStyle(
+                                                    fontSize: 15.0,
+                                                    fontWeight: FontWeight.w700,
+                                                    color: textColor1),
+                                              ),
+                                              const SizedBox(height: 8),
+                                              Text(
+                                                formatTimestamp(
+                                                  data['endDate'], 'yyyy년 MM월 dd일'),
+                                                style: const TextStyle(
+                                                    fontSize: 10.0,
+                                                    fontWeight: FontWeight.w700,
+                                                    color: Color(0xFFA8A8A8)),
+                                              ),
+                                            ],
                                           ),
                                         ),
-                                      ),
-                                    ),
-                                  ),
-                                  const Positioned(
-                                    top: 7,
-                                    right: 12,
-                                    child: Text(
-                                      '9/10',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 10,
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 9.0),
-                                child: Center(
-                                  child: Column(
-                                    children: const [
-                                      Text(
-                                        '[상추 재배하기]',
-                                        style: TextStyle(
-                                            fontSize: 15.0,
-                                            fontWeight: FontWeight.w700,
-                                            color: textColor1),
-                                      ),
-                                      SizedBox(height: 8),
-                                      Text(
-                                        '2023년 6월 1일',
-                                        style: TextStyle(
-                                            fontSize: 10.0,
-                                            fontWeight: FontWeight.w700,
-                                            color: Color(0xFFA8A8A8)),
                                       ),
                                     ],
                                   ),
                                 ),
                               ),
                             ],
-                          ),
-                        ),
-                      ),
+                          );
+                        } else {
+                          return const SizedBox();
+                        }
+                      },
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      // 몇 개까지 그릴 것인지
+                      itemCount: 5,
                     ),
-                  ],
-                );
+                  );
+                } else if (snapshot.hasError) {
+                  return Text('Error: ${snapshot.error}');
+                } else {
+                  return const CircularProgressIndicator();
+                }
               },
-              physics: const NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              // 몇 개까지 그릴 것인지
-              itemCount: 5,
             ),
           ],
         ),
