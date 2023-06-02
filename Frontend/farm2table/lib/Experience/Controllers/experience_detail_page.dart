@@ -100,7 +100,6 @@ class _ExperienceDetailPageState extends State<ExperienceDetailPage> {
                   },
                 ),
               ),
-              title: const Text("제주 감귤 재배하기"),
             )
           ];
         },
