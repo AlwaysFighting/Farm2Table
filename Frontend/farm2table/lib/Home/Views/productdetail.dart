@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:farm2table/Const/colors.dart';
+import 'package:farm2table/Basket/Views/shoppingbasket.dart';
 
 class ProductDetail extends StatefulWidget{
   final String id;
@@ -264,7 +265,14 @@ class ProductDetailState extends State<ProductDetail>{
                           Container(
                             width: 174,
                             padding: EdgeInsets.fromLTRB(19, 0, 4, 36),
-                            child: ElevatedButton(onPressed: (){/*장바구니로*/},
+                            child: ElevatedButton(onPressed: (){
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ShoppingBasket(),
+                                ),
+                              );
+                            },
                               child: Text('장바구니',
                                 style: TextStyle(
                                   fontSize: 13,
