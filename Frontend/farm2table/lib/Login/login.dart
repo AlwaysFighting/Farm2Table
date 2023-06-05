@@ -27,6 +27,8 @@ class _LoginState extends State<Login>{
     return Scaffold(
       body: Column(
         children: [
+          SizedBox(height: 251,),
+          Image.asset('assets/Images/logo.png', width: 255,height: 255,),
           ElevatedButton(onPressed: signInWithGoogle, child: Image.asset('assets/Images/login_button.png'))
         ],
       ),
