@@ -2,6 +2,7 @@ import 'dart:ui';
 
 const mainColor = Color(0xFFFFB978);
 const subColor = Color(0xFF98BD87);
+const subColor2 = Color(0xFFCEDDC7);
 
 const textColor1 = Color(0xFF535353);
 const textColor2 = Color(0xFF8F8F8F);
