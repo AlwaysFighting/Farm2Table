@@ -156,6 +156,14 @@ class _ExperienceDetailPageState extends State<ExperienceDetailPage> {
                                       ),
                                     ),
                                     const SizedBox(width: 4.0),
+                                    (data["current_num"].toString() == data["sum_people"].toString()) ?
+                                    Text(
+                                      "마감",
+                                      style: titleStyle.copyWith(
+                                        color: const Color(0xFFFFB978),
+                                        fontSize: 14.0,
+                                      ),
+                                    ) :
                                     Text(
                                       "(마감 ${formatTimestampRelation(data['endDate'])})",
                                       style: titleStyle.copyWith(
