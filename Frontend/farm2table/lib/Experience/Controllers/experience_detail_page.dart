@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../../Const/colors.dart';
+import '../Views/Farmer/farmer_delivery_page.dart';
+import '../Views/Farmer/farmer_detail_page.dart';
 import 'experience_review_page.dart';
 
 class ExperienceDetailPage extends StatefulWidget {
@@ -139,7 +141,15 @@ class _ExperienceDetailPageState extends State<ExperienceDetailPage> {
                               children: [
                                 TextButton(
                                   onPressed: () {
-                                    print("농부 프로필로 이동하기");
+                                    Navigator.of(context).push(
+                                        MaterialPageRoute(builder: (BuildContext context) {
+                                          return WriterFarmerInfoPage(programNum: programNumber, writer: data['writers'],);
+                                        }));
+                                    // Navigator.of(context).push(
+                                    //     MaterialPageRoute(builder: (BuildContext context) {
+                                    //       return FarmerDeliveryPage();
+                                    //     }));
+
                                   },
                                   style: TextButton.styleFrom(
                                       textStyle: titleStyle),
