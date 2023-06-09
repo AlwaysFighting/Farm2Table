@@ -35,7 +35,6 @@ class _BottomNavigationState extends State<BottomNavigation> {
     return Scaffold(
       body: StreamBuilder(
         stream: FirebaseAuth.instance.authStateChanges(),
-        //snapshot 데이터 null이 될수 있다
         builder: (BuildContext context, AsyncSnapshot<User?> snapshot){
           if(!snapshot.hasData){
             return Login();

@@ -38,12 +38,11 @@ dependencies:
   carousel_slider: ^4.2.1
   flutter_screenutil: ^5.7.0
   hexcolor: ^3.0.1
-  firebase_auth: ^4.5.0
-  firebase_core: ^2.11.0
-  google_sign_in: ^6.1.0
-  cloud_firestore: ^4.6.0
-  fluttertoast: ^8.2.2
-  shared_preferences: ^2.1.1
+  intl: ^0.18.1
+  firebase_auth: ^4.6.2
+  firebase_core: ^2.13.1
+  google_sign_in: ^6.1.2
+  cloud_firestore: ^4.8.0
 
 dev_dependencies:
   flutter_test:
@@ -70,11 +69,11 @@ flutter:
   assets:
     - assets/Images/fruit/
     - assets/Images/farmer/
-    - assets/Images/orange_farmer/
-    - assets/Images/orange_market/
     - assets/Images/vegetable/
     - assets/Images/home_images/
     - assets/Images/market/
+    - assets/Images/market/LettuceMarket/
+    - assets/Images/market/BlueberryMarket/
     - assets/Images/const/
     - assets/Images/login_button.png
     - assets/Images/
