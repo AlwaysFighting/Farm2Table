@@ -716,12 +716,55 @@ class ProductInfo extends StatelessWidget {
                                     builder: (BuildContext context) {
                                       return Dialog(
                                         shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(10.0),
+                                          borderRadius: BorderRadius.circular(20.0),
                                         ),
-                                        child: Container(
+                                        child: SizedBox(
                                           height: 200,
-                                          child: Column(
-                                            
+                                          child: Padding(
+                                            padding: const EdgeInsets.only(top: 22.0),
+                                            child: Column(
+                                              children: [
+                                                Center(
+                                                  child: SizedBox(
+                                                    height: 41.78,
+                                                    width: 41.78,
+                                                    child: Image.asset(
+                                                      "assets/Images/farmer/Success.png",
+                                                      fit: BoxFit.cover,
+                                                    ),
+                                                  ),
+                                                ),
+                                                const SizedBox(height: 25.07),
+                                                const Text('장바구니 추가 성공!', style: TextStyle(
+                                                  fontSize: 18.0,
+                                                  fontWeight: FontWeight.w500,
+                                                  color: Color(0xFF535353),
+                                                ),),
+                                                const SizedBox(height: 38),
+                                                GestureDetector(
+                                                  onTap: () {
+                                                    Navigator.of(context).pop();
+                                                  },
+                                                  child: Container(
+                                                    height: 50,
+                                                    decoration: const BoxDecoration(
+                                                      borderRadius: BorderRadius.only(
+                                                        bottomLeft: Radius.circular(20.0),
+                                                        bottomRight: Radius.circular(20.0),
+                                                      ),
+                                                      color: Color(0xFF98BD87),
+                                                    ),
+                                                    child: const Center(
+                                                      child: Text("확인", style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 20.0,
+                                                        fontWeight: FontWeight.w700,
+                                                      ),),
+                                                    ),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
                                           ),
                                         ),
                                       );
