@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:farm2table/Const/colors.dart';
-import 'package:farm2table/Basket/Views/shoppingbasket.dart';
+import 'package:farm2table/Cart/Views/cart.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ProductDetail extends StatefulWidget{
   final String id;
@@ -11,10 +13,8 @@ class ProductDetail extends StatefulWidget{
 }
 //상품이름,가격,마켓정보
 class ProductDetailState extends State<ProductDetail>{
-  //List<String> _scrapProductIds=[];
   bool isscrap = false;
   FirebaseFirestore firestore = FirebaseFirestore.instance;
-  //String backgroundurl='';
   //수량선택 아이템
   final count_value_list = ['수량선택','1개','2개','3개','4개','5개'];
   String select_count = '수량선택';
@@ -26,6 +26,9 @@ class ProductDetailState extends State<ProductDetail>{
     // TODO: implement initState
     super.initState();
   }
+
+
+
   @override
   Widget build(BuildContext context)
   {
@@ -158,7 +161,7 @@ class ProductDetailState extends State<ProductDetail>{
             padding: EdgeInsets.fromLTRB(30, 9, 23, 5),
             child: SizedBox(
               width: 260,
-              child: ElevatedButton(onPressed: (){showBottomSheet();},
+              child: ElevatedButton(onPressed: (){showBottomSheet(context);},
                 child: Text('구매하기',
                 style: TextStyle(
                   fontSize: 13,
@@ -180,7 +183,7 @@ class ProductDetailState extends State<ProductDetail>{
     );
   }
 
-  void showBottomSheet(){
+  void showBottomSheet(context){
     showModalBottomSheet(context: context,
         builder: (BuildContext context){
           return StatefulBuilder(
@@ -265,13 +268,11 @@ class ProductDetailState extends State<ProductDetail>{
                           Container(
                             width: 174,
                             padding: EdgeInsets.fromLTRB(19, 0, 4, 36),
-                            child: ElevatedButton(onPressed: (){
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => ShoppingBasket(),
-                                ),
+                            child: ElevatedButton(onPressed: ()async{
+                              await ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(content: Text('장바구니에 상품이 추가되었습니다.'))
                               );
+                              Navigator.pop(context);
                             },
                               child: Text('장바구니',
                                 style: TextStyle(
@@ -316,5 +317,18 @@ class ProductDetailState extends State<ProductDetail>{
           );
         });
   }
+
+  //장바구니 추가 메세지
+void showToast(){
+    Fluttertoast.showToast(
+      msg: '장바구니에 상품이 추가되었습니다.',
+      gravity: ToastGravity.CENTER,
+      fontSize: 20,
+      textColor: Colors.black,
+      backgroundColor: textColor2,
+      toastLength: Toast.LENGTH_SHORT,
+    );
+  }
+
 
 }
