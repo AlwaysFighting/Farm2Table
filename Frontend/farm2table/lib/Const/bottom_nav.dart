@@ -8,6 +8,8 @@ import '../MyPage/Views/mypage_home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:farm2table/Login/login.dart';
 
+import 'colors.dart';
+
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({Key? key}) : super(key: key);
 
@@ -53,12 +55,11 @@ class _BottomNavigationState extends State<BottomNavigation> {
 
   BottomNavigationBar _bottomNavigation() {
     return BottomNavigationBar(
-      backgroundColor: Colors.white,
-      unselectedItemColor: Colors.grey,
-      selectedLabelStyle: const TextStyle(color: Colors.black),
-      selectedItemColor: Colors.black,
-      selectedFontSize: 12,
-      unselectedFontSize: 12,
+      backgroundColor: subColor,
+      unselectedItemColor: Colors.white,
+      selectedLabelStyle: const TextStyle(color: Colors.white, fontWeight: FontWeight.w700, fontSize: 10.0),
+      unselectedLabelStyle: const TextStyle(color: Colors.white, fontWeight: FontWeight.w400, fontSize: 10.0),
+      selectedItemColor: Colors.white,
       type: BottomNavigationBarType.fixed,
       onTap: (int index) {
         setState(() {
@@ -66,26 +67,101 @@ class _BottomNavigationState extends State<BottomNavigation> {
         });
       },
       currentIndex: currentIndex,
-      items:const [
+      items: [
         BottomNavigationBarItem(
-          label: "홈",
-          icon: Icon(Icons.home_outlined),
+          icon: Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Image.asset(
+              'assets/Images/navigation/House_Grey.png',
+              width: 20,
+              height: 20,
+            ),
+          ),
+          activeIcon: Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Image.asset(
+              'assets/Images/navigation/House_Color.png',
+              width: 20,
+              height: 20,
+            ),
+          ),
+          label: '홈',
         ),
         BottomNavigationBarItem(
-          label: "마켓",
-          icon: Icon(Icons.add_business_outlined),
+          icon: Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Image.asset(
+              'assets/Images/navigation/Market_Grey.png',
+              width: 20,
+              height: 20,
+            ),
+          ),
+          activeIcon: Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Image.asset(
+              'assets/Images/navigation/Market_Color.png',
+              width: 20,
+              height: 20,
+            ),
+          ),
+          label: '마켓',
         ),
         BottomNavigationBarItem(
-          label: "체험",
-          icon: Icon(Icons.airplane_ticket_outlined),
+          icon: Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Image.asset(
+              'assets/Images/navigation/Ex_Grey.png',
+              width: 20,
+              height: 20,
+            ),
+          ),
+          activeIcon: Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Image.asset(
+              'assets/Images/navigation/Ex_Color.png',
+              width: 20,
+              height: 20,
+            ),
+          ),
+          label: '체험',
         ),
         BottomNavigationBarItem(
-          label: "장바구니",
-          icon: Icon(Icons.shopping_cart_outlined),
+          icon: Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Image.asset(
+              'assets/Images/navigation/Cart_Grey.png',
+              width: 20,
+              height: 20,
+            ),
+          ),
+          activeIcon: Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Image.asset(
+              'assets/Images/navigation/Cart_Color.png',
+              width: 20,
+              height: 20,
+            ),
+          ),
+          label: '장바구니',
         ),
         BottomNavigationBarItem(
-          label: "마이페이지",
-          icon: Icon(Icons.person_outline),
+          icon: Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Image.asset(
+              'assets/Images/navigation/User_Grey.png',
+              width: 20,
+              height: 20,
+            ),
+          ),
+          activeIcon: Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Image.asset(
+              'assets/Images/navigation/User_Color.png',
+              width: 20,
+              height: 20,
+            ),
+          ),
+          label: '마이페이지',
         ),
       ],
     );
