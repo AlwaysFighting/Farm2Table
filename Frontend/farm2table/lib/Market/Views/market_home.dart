@@ -30,13 +30,18 @@ class _MarketHomePageState extends State<MarketHomePage> {
   );
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
 
     CollectionReference marketDetail =
     FirebaseFirestore.instance.collection('market1');
 
     return DefaultTabController(
-      initialIndex: 1,
+      initialIndex: 0,
       length: 2,
       child: Scaffold(
         backgroundColor: Colors.white,
