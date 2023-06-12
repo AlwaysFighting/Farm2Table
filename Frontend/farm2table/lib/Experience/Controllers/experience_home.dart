@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../../Market/Views/market_home.dart';
+import 'experience_category_page.dart';
 
 final List<String> imgList = [
   'https://images.unsplash.com/photo-1591754060004-f91c95f5cf05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80',
@@ -359,7 +360,13 @@ class _categoryCard extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
-
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (BuildContext context) {
+            return ExperienceCategory(
+              index: index,
+              title: index == 0 ? 'Fruit' : 'Vegetable',
+            );
+          }));
         },
         child: Card(
           shape: RoundedRectangleBorder(
