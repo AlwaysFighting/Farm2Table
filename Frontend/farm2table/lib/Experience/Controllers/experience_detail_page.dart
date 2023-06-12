@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../../Const/colors.dart';
-import '../Views/Farmer/farmer_delivery_page.dart';
 import '../Views/Farmer/farmer_detail_page.dart';
 import 'experience_review_page.dart';
 
