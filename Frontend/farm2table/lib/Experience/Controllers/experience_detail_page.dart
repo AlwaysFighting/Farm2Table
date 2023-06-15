@@ -326,7 +326,7 @@ class _ExperienceDetailPageState extends State<ExperienceDetailPage> {
                                   }));
                                 },
                                 style: ElevatedButton.styleFrom(
-                                  primary: ratingColor2,
+                                  backgroundColor: ratingColor2,
                                   elevation: 0,
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(7.0)),
@@ -397,8 +397,7 @@ class _ExperienceDetailPageState extends State<ExperienceDetailPage> {
                                 print("참가하기");
                               },
                               style: ElevatedButton.styleFrom(
-                                onPrimary: Colors.white,
-                                primary: subColor,
+                                foregroundColor: Colors.white, backgroundColor: subColor,
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(15.0)),
                                 textStyle: const TextStyle(

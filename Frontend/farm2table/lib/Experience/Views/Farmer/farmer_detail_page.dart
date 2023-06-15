@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import '../../../Const/colors.dart';
-import 'farmer_delivery_page.dart';
 
 class WriterFarmerInfoPage extends StatefulWidget {
   const WriterFarmerInfoPage({

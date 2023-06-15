@@ -17,7 +17,7 @@ final List<String> imgList = [
 ];
 
 class ExperienceHome extends StatefulWidget {
-  ExperienceHome({Key? key}) : super(key: key);
+  const ExperienceHome({Key? key}) : super(key: key);
 
   @override
   State<ExperienceHome> createState() => _ExperienceHomeState();
@@ -41,9 +41,9 @@ class _ExperienceHomeState extends State<ExperienceHome> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      imgList.forEach((imageUrl) {
+      for (var imageUrl in imgList) {
         precacheImage(NetworkImage(imageUrl), context);
-      });
+      }
     });
     super.initState();
   }
@@ -83,22 +83,22 @@ class _ExperienceHomeState extends State<ExperienceHome> {
           children: [
             const _banner(),
             const SizedBox(height: 25.0),
-            Padding(
-              padding: const EdgeInsets.only(left: 24),
+            const Padding(
+              padding: EdgeInsets.only(left: 24),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const Text(
+                  Text(
                     "체험 프로그램 카테고리",
                     style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w700,
                         color: subColor),
                   ),
-                  const SizedBox(height: 18),
+                  SizedBox(height: 18),
                   Row(
-                    children: const [
+                    children: [
                       _categoryCard(
                         title: '과일',
                         image: 'assets/Images/fruit/fruit.png', index: 0,
@@ -110,15 +110,15 @@ class _ExperienceHomeState extends State<ExperienceHome> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 35),
-                  const Text(
+                  SizedBox(height: 35),
+                  Text(
                     "! 마감 입박 프로그래밍 !",
                     style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w700,
                         color: subColor),
                   ),
-                  const SizedBox(height: 18),
+                  SizedBox(height: 18),
                 ],
               ),
             ),
@@ -274,9 +274,7 @@ class _ExperienceHomeState extends State<ExperienceHome> {
 }
 
 class _banner extends StatelessWidget {
-  const _banner({
-    super.key,
-  });
+  const _banner();
 
   @override
   Widget build(BuildContext context) {

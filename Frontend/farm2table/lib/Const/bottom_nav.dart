@@ -27,7 +27,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
   final List<Widget> _widgetOptions = <Widget>[
     const Home(),
     const MarketHomePage(),
-    ExperienceHome(),
+    const ExperienceHome(),
     const Cart(),
     const MyPage()
   ];
@@ -39,7 +39,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (BuildContext context, AsyncSnapshot<User?> snapshot){
           if(!snapshot.hasData){
-            return Login();
+            return const Login();
           }else{
             return Scaffold(
               body: SafeArea(

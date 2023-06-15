@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ScrapButton extends StatefulWidget{
   final bool isTapped;
   final VoidCallback onTap;
-  const ScrapButton({required this.isTapped, required this.onTap});
+  const ScrapButton({super.key, required this.isTapped, required this.onTap});
 
   @override
   State<ScrapButton> createState() => ScrapState();

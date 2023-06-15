@@ -82,14 +82,14 @@ class _HomeState extends State<Home> {
     ];
 
   Widget category(){
-    return Container(
+    return SizedBox(
       //height: double.infinity,
       width: ScreenUtil().setWidth(338),
       child: GridView.count(
         crossAxisCount: 5,
         childAspectRatio: 0.7,
         shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         children:List.generate(items.length,(index){
           return GestureDetector(
             onTap: (){
@@ -113,7 +113,7 @@ class _HomeState extends State<Home> {
                   SizedBox(height:ScreenUtil().setHeight(2)),
                   Text(
                       items[index]['name'],
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 12,
                       ),
                     ),
