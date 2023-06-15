@@ -5,6 +5,9 @@ import 'package:farm2table/Experience/Controllers/experience_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import '../../Market/Views/market_home.dart';
+import 'experience_category_page.dart';
+
 final List<String> imgList = [
   'https://images.unsplash.com/photo-1591754060004-f91c95f5cf05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80',
   'https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80',
@@ -98,12 +101,12 @@ class _ExperienceHomeState extends State<ExperienceHome> {
                     children: [
                       _categoryCard(
                         title: '과일',
-                        image: 'assets/Images/fruit/fruit.png',
+                        image: 'assets/Images/fruit/fruit.png', index: 0,
                       ),
                       SizedBox(width: 30),
                       _categoryCard(
                         title: '채소',
-                        image: 'assets/Images/fruit/veget.png',
+                        image: 'assets/Images/fruit/veget.png', index: 1,
                       ),
                     ],
                   ),
@@ -333,11 +336,12 @@ class _banner extends StatelessWidget {
 class _categoryCard extends StatelessWidget {
   final String title;
   final String image;
+  final int index;
 
   final cardTextStyle = const TextStyle(
       color: mainColor, fontSize: 15, fontWeight: FontWeight.w700);
 
-  const _categoryCard({required this.title, required this.image});
+  const _categoryCard({required this.title, required this.image, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -352,15 +356,21 @@ class _categoryCard extends StatelessWidget {
           ),
         ],
       ),
-      child: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(18.0),
-        ),
-        clipBehavior: Clip.hardEdge,
-        child: InkWell(
-          onTap: () {
-            debugPrint('Card tapped.');
-          },
+      child: InkWell(
+        onTap: () {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (BuildContext context) {
+            return ExperienceCategory(
+              index: index,
+              title: index == 0 ? 'Fruit' : 'Vegetable',
+            );
+          }));
+        },
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(18.0),
+          ),
+          clipBehavior: Clip.hardEdge,
           child: SizedBox(
             width: 150,
             height: 91,
