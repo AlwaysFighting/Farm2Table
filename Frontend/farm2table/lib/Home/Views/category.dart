@@ -13,14 +13,14 @@ class Category extends StatefulWidget{
 }
 
 class CategoryState extends State<Category>{
-  List<String> _scrapProductIds=[];
+  final List<String> _scrapProductIds=[];
   late String id;
   late CollectionReference product;
   @override
   void initState(){
     super.initState();
     id=widget.id;
-    product = FirebaseFirestore.instance.collection('${id}');
+    product = FirebaseFirestore.instance.collection(id);
   }
 
   @override
@@ -32,7 +32,7 @@ class CategoryState extends State<Category>{
           Positioned(
             top: 0,
               left: 0,
-              child: Image.asset('assets/Images/home_images/${id}.png',fit: BoxFit.fitWidth, width: MediaQuery.of(context).size.width,height: MediaQuery.of(context).size.height*0.28 )),
+              child: Image.asset('assets/Images/home_images/$id.png',fit: BoxFit.fitWidth, width: MediaQuery.of(context).size.width,height: MediaQuery.of(context).size.height*0.28 )),
           Positioned(
             top:50,left: 5,
             child: GestureDetector(
@@ -56,7 +56,7 @@ class CategoryState extends State<Category>{
 
   Widget fruitlist(){
     return Container(
-      padding: EdgeInsets.fromLTRB(15, 30, 23, 30),
+      padding: const EdgeInsets.fromLTRB(15, 30, 23, 30),
       height: MediaQuery.of(context).size.height*0.72,
       //데이터가 업데이트되면 실시간으로 데이터를 보여주기 위함
       child: StreamBuilder(
@@ -78,18 +78,18 @@ class CategoryState extends State<Category>{
                     child: ListTile(
                       leading: ClipRRect
                         (borderRadius: BorderRadius.circular(10),
-                          child: Image.asset('assets/Images/home_images/${id}detail_${index}.png', width: MediaQuery.of(context).size.width*0.18,height:MediaQuery.of(context).size.height*0.08)),
+                          child: Image.asset('assets/Images/home_images/${id}detail_$index.png', width: MediaQuery.of(context).size.width*0.18,height:MediaQuery.of(context).size.height*0.08)),
                       title: Text(documentSnapshot['productName'],
-                      style: TextStyle(fontSize: 15),),
+                      style: const TextStyle(fontSize: 15),),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(height: 5,),
+                          const SizedBox(height: 5,),
                           Text(documentSnapshot['productMarket'],
-                            style: TextStyle(fontSize: 10),),
-                          SizedBox(height: 5,),
+                            style: const TextStyle(fontSize: 10),),
+                          const SizedBox(height: 5,),
                           Text('${documentSnapshot['productPrice'].toString()}원',
-                            style: TextStyle(fontSize: 13,
+                            style: const TextStyle(fontSize: 13,
                             fontWeight: FontWeight.bold,
                             color: textColor4),),
                         ],
@@ -111,8 +111,8 @@ class CategoryState extends State<Category>{
                 });
           }
           else{
-            return Center(
-              child: Container(
+            return const Center(
+              child: SizedBox(
                 height: 30,
                 width: 30,
                 child: CircularProgressIndicator(),

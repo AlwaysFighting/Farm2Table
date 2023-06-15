@@ -7,7 +7,7 @@ import 'package:firebase_core/firebase_core.dart';
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(myapp());
+  runApp(const myapp());
 }
 class myapp extends StatelessWidget{
   const myapp({Key? key}) : super(key:key);
@@ -16,7 +16,7 @@ class myapp extends StatelessWidget{
     return ScreenUtilInit(
       designSize: const Size(390, 844),
       builder: (context, child) {
-        return MaterialApp(
+        return const MaterialApp(
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             body: BottomNavigation(),
