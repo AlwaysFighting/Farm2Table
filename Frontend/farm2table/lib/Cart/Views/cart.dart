@@ -161,35 +161,40 @@ class CartState extends State<Cart> {
 
                               ),
                                Spacer(),
-                              Row(
+                              Column(
                                 children: [
-                                  const SizedBox(width: 10,),
-                                  Text("총 $total원",
-                                    style: const TextStyle(
-                                      fontSize:13,
-                                      color: textColor4,
-                                    ),
-                                  ),
-                                  const SizedBox(width: 9,),
-                                  SizedBox(
-                                    width: 279,
-                                    height: 41,
-                                    child: ElevatedButton(onPressed: (){},
-                                        style: ButtonStyle(
-                                            backgroundColor: MaterialStateProperty.all<Color>(subColor),
-                                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                                RoundedRectangleBorder(
-                                                  borderRadius: BorderRadius.circular(10),
-                                                )
-                                            )
+                                  Row(
+                                    children: [
+                                      const SizedBox(width: 10,),
+                                      Text("총 $total원",
+                                        style: const TextStyle(
+                                          fontSize:13,
+                                          color: textColor4,
                                         ),
-                                        child: Text("구매하기",
-                                          style: TextStyle(
-                                            fontSize: 13,
-                                            color: Colors.white,
-                                          ),
-                                        )),
-                                  )
+                                      ),
+                                      const SizedBox(width: 9,),
+                                      SizedBox(
+                                        width: 279,
+                                        height: 41,
+                                        child: ElevatedButton(onPressed: (){},
+                                            style: ButtonStyle(
+                                                backgroundColor: MaterialStateProperty.all<Color>(subColor),
+                                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                                    RoundedRectangleBorder(
+                                                      borderRadius: BorderRadius.circular(10),
+                                                    )
+                                                )
+                                            ),
+                                            child: Text("구매하기",
+                                              style: TextStyle(
+                                                fontSize: 13,
+                                                color: Colors.white,
+                                              ),
+                                            )),
+                                      )
+                                    ],
+                                  ),
+                                  SizedBox(height: 15,),
                                 ],
                               ),
                             ],
