@@ -83,22 +83,22 @@ class _ExperienceHomeState extends State<ExperienceHome> {
           children: [
             const _banner(),
             const SizedBox(height: 25.0),
-            const Padding(
+            Padding(
               padding: EdgeInsets.only(left: 24),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Text(
+                  const Text(
                     "체험 프로그램 카테고리",
                     style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w700,
                         color: subColor),
                   ),
-                  SizedBox(height: 18),
+                  const SizedBox(height: 18),
                   Row(
-                    children: [
+                    children: const [
                       _categoryCard(
                         title: '과일',
                         image: 'assets/Images/fruit/fruit.png', index: 0,
@@ -110,15 +110,15 @@ class _ExperienceHomeState extends State<ExperienceHome> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 35),
-                  Text(
+                  const SizedBox(height: 35),
+                  const Text(
                     "! 마감 입박 프로그래밍 !",
                     style: TextStyle(
                         fontSize: 18.0,
                         fontWeight: FontWeight.w700,
                         color: subColor),
                   ),
-                  SizedBox(height: 18),
+                  const SizedBox(height: 18),
                 ],
               ),
             ),
